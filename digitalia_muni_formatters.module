@@ -1,0 +1,19 @@
+<?php
+
+function alter_field_token_rendering(&$display_options)
+{
+
+	//\Drupal::logger("DEBUG_TYPE")->debug($display_options["type"]);
+	if ($display_options["type"] === "entity_reference_label") {
+		$display_options["type"] = "digitalia_term_formatter";
+		//$display_options["type"] = "taxonomy_term_reference_formatter";
+		$display_options["settings"]["separator_option"] = "|";
+	}
+
+	if ($display_options["type"] === "string" ||
+	    $display_options["type"] === "basic_string" ||
+	    $display_options["type"] === "default_text") {
+		$display_options["type"] = "digitalia_text_formatter";
+		$display_options["settings"]["separator_option"] = "|";
+	}
+}

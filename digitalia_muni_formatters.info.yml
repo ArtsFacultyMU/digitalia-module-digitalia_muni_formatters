@@ -1,0 +1,6 @@
+name: Digitalia formatters
+description: Provides custom formatters
+package: Custom
+
+type: module
+core_version_requirement: ^9 || ^10
